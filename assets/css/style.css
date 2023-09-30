@@ -1,7 +1,6 @@
 body {
     margin: 0;
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
         "header"
         "nav"
@@ -12,25 +11,11 @@ body {
 
 header {
     grid-area: header;
-    background-color: rgba(7, 7, 201, 0.726);
+    background-color: rgba(9, 9, 192, 0.719);
     display: flex;
     align-items: center;
     justify-content: center;
     justify-content: space-evenly;
-}
-
-.botongrupal {
-    margin-left: 100px;
-}
-
-
-nav {
-    grid-area: nav;
-    background-color: rgb(238, 255, 0);
-}
-
-nav p {
-    color: rgb(0, 0, 0);
 }
 
 .textoheader {
@@ -40,6 +25,32 @@ nav p {
     margin-left: 10px;
     color: white;
 }
+
+.botongrupal {
+    margin-left: 100px;
+}
+
+
+nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: rgba(243, 243, 243, 0.774);
+
+}
+
+nav p {
+    color: rgb(0, 0, 0);
+}
+
+.filtro {
+width: 70%;
+height: 20px;
+}
+
+
 
 main {
     grid-area: main;
@@ -52,7 +63,6 @@ main {
 }
 
 .productos {
-    display: none;
     text-align: center;
 }
 
@@ -62,8 +72,9 @@ a {
 
 .páginas p {
     background-color: red;
+    justify-content: center;
     color: white;
-    text-align: center;
+    
 }
 
 
