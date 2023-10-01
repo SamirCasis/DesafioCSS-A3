@@ -1,4 +1,5 @@
 body {
+    display: grid;
     margin: 0;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1 fr 10fr 1fr;
@@ -6,29 +7,38 @@ body {
         "header"
         "nav"
         "main"
-        "footer"; 
-    }
+        "footer";
+}
 
 header {
     grid-area: header;
-    background-color: rgba(9, 9, 192, 0.719);
+    background-color: rgb(0, 46, 114);
     display: flex;
     align-items: center;
     justify-content: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .textoheader {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
     color: white;
+    font-size: 20px;
 }
 
 .botongrupal {
-    margin-left: 100px;
+    margin-right: 20px;
     color: white;
+    font-size: x-large;
+}
+
+.menu {
+    display: none;
+    color: white;
+    text-align: center;
+    justify-content: start;
 }
 
 nav {
@@ -47,79 +57,111 @@ nav p {
 }
 
 .filtro {
-    width: 70%;
+    width: 90%;
     height: 30px;
 }
 
 main {
     grid-area: main;
+    min-height: fit-content;
 }
 
 .oferta {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: scroll;
 }
 
-.productos {
+.producto {
     text-align: center;
     border: solid gray 1px;
- }
+    box-shadow: 1px 5px 5px 0px;
+    width: 80%;
+    margin-bottom: 30px;
+}
 
-.productos button {
-        padding: 10px;
-        width: 30%;
-        background-color: rgb(20, 20, 175);
-        color: white;
-        border-radius: 4px;
+.producto button {
+    padding: 10px;
+    width: 40%;
+    background-color: rgb(0, 46, 114);
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.páginas {
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 10px 10px;
+    margin: 20px 5px;
+
+}
+
+.páginas a {
+    color: blue;
+    padding: 10px;
+    border: solid rgb(206, 206, 206) 1px;
+    text-decoration: none;
+}
+
+footer {
+    grid-area: footer;
+    background-color: rgb(0, 46, 114);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconosfoot {
+    display: flex;
+    gap: 10px;
+    color: white;
+    margin-top: 10px;
+}
+
+.iconosfoot i {
+    font-size: large;
+}
+
+.textofoot p {
+    color: white;
+    margin-top: 5px;
+}
+
+@media (min-width: 576px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 7fr;
+        grid-template-rows: 1fr 6fr 1fr;
+        grid-template-areas:
+            "header nav"
+            "header main"
+            "footer main";
+        min-height: 100vh;
     }
 
-    .páginas {
-        justify-content: center;
-        text-align: center;
-        color: white;
-        padding: 10px 10px;
+.botongrupal .menu {
+    display: block;
+}
+
+    main {
+        display:flex;
+        flex-wrap: wrap;
+        min-height: 80vh;
     }
 
-    .páginas a {
-        margin: 10px;
-        border: solid skyblue 1px;
+    .textoheader {}
+
+    .botongrupal {
+        display: none;
     }
 
     footer {
-        grid-area: footer;
-        background-color: rgb(0, 46, 114);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        text-align: center;
+        justify-content: center;
     }
-
-    .iconosfoot {
-        display: flex;
-        gap: 10px;
-        color: white;
-        margin-top: 10px;
-    }
-
-    .iconosfoot i {
-        font-size: large;
-    }
-
-    .textofoot p {
-        color: white;
-        margin-top: 5px;
-    }
-
-    @media (min-width: 576px) {
-        body {
-            background-color: blue;
-            grid-template-columns: 20% 80%;
-            grid-template-areas:
-                "header nav"
-                "header main"
-                "footer main";
-        }
-
-        main {
-            display: wrap;
-        }
-     }
+}
