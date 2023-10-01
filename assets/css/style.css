@@ -12,7 +12,7 @@ body {
 
 header {
     grid-area: header;
-    background-color: rgb(0, 46, 114);
+    background-color: rgb(2, 66, 161);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,11 +34,13 @@ header {
     font-size: x-large;
 }
 
-.menu {
+#menu {
     display: none;
     color: white;
-    text-align: center;
-    justify-content: start;
+}
+
+#menu li {
+    margin-bottom: 10px;
 }
 
 nav {
@@ -79,7 +81,6 @@ main {
     text-align: center;
     border: solid gray 1px;
     box-shadow: 1px 5px 5px 0px;
-    width: 80%;
     margin-bottom: 30px;
 }
 
@@ -144,17 +145,39 @@ footer {
         min-height: 100vh;
     }
 
-.botongrupal .menu {
-    display: block;
-}
-
-    main {
-        display:flex;
-        flex-wrap: wrap;
-        min-height: 80vh;
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     }
 
-    .textoheader {}
+.textoheader {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+
+   #menu {
+    display: block;
+   }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .oferta {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        max-height: 530px;
+        margin: 20px;
+        gap: 10px;
+    }
+
+    .páginas {
+        align-items: flex-start;
+    }
 
     .botongrupal {
         display: none;
